@@ -1,3 +1,6 @@
+T.C. -> O(N)
+S.C. -> O(N)    
+    
 class Solution {
 public:
     char solveOpr(vector<char>& value, char opr){
