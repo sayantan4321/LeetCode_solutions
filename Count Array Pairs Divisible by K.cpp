@@ -1,3 +1,24 @@
+
+Approach - 1(Brute Force)
+class Solution {
+public:
+long long countPairs(vector<int>& nums, int k) {
+        long long cnt = 0;
+        int n = nums.size();
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                if((nums[i]*nums[j])%k == 0){
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+Approach - 2(Optimal)
+T.C. -> O(N+N)
+S.C. -> O(N)
 class Solution {
 public:
     // int gcd(int a, int b) { // itaretive way
@@ -28,15 +49,5 @@ public:
             map[val]++;
         }
         return ans;
-        // long long cnt = 0;
-        // int n = nums.size();
-        // for(int i=0; i<n; i++){
-        //     for(int j=i+1; j<n; j++){
-        //         if((nums[i]*nums[j])%k == 0){
-        //             cnt++;
-        //         }
-        //     }
-        // }
-        // return cnt;
     }
 };
