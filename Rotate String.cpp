@@ -1,10 +1,12 @@
+// T.C. -> O(N^2)
+// S.C. -> O(1)    
 class Solution {
 public:
     bool rotateString(string s, string goal) {
       
         if(s.size() != goal.size()) return false;
-        for(int i=0; i<s.length(); i++){
-           rotate(s.begin(), s.begin()+1, s.end());
+        for(int i=0; i<s.length(); i++){  // O(N)
+           rotate(s.begin(), s.begin()+1, s.end()); // STL function to rotate each time from starting each time -> O(N)
            if(s==goal){
              return true;
            }
@@ -13,6 +15,8 @@ public:
     }
 };
 
+// T.C. -> O(N)
+// S.C. -> O(N+N)   
 class Solution {
 public:
     bool rotateString(string s, string goal) {
@@ -37,6 +41,9 @@ public:
     }
 };
 
+
+// T.C. -> O(N)
+// S.C. -> O(N+N)   
 class Solution {
 public:
     bool rotateString(string s, string goal) {
