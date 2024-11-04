@@ -1,3 +1,6 @@
+Approach - 1
+// T.C. - O(N) 
+// S.C. - O(N)        
 class Solution {
 public:
     string makeFancyString(string s) {
@@ -16,6 +19,10 @@ public:
         return res;
     }
 };
+
+Approach - 2
+// T.C. - O(N) 
+// S.C. - O(N)  
 class Solution {
 public:
     string makeFancyString(string s) {
