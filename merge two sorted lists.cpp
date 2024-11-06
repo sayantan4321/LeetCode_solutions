@@ -44,7 +44,7 @@ public:
                 
         }
 		
-		// adding remaining elements of bigger list.
+	// adding remaining elements of bigger list.
         if(!list1)
             curr -> next = list2;
         else
