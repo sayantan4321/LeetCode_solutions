@@ -1,4 +1,4 @@
-
+// Brute - Approach
 class Solution {
 public:
     vector<int> resultsArray(vector<int>& nums, int k) {
@@ -23,6 +23,8 @@ public:
         return res;
     }
 };
+
+// Optimal - Approach
 class Solution {
 public:
     vector<int> resultsArray(vector<int>& nums, int k) {
