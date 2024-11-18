@@ -1,3 +1,7 @@
+// B.S. on Answers
+// T.C. -> O(Log(1E7)∗N)
+// S.C. -> O(1)    
+
 class Solution {
 public:
     double speed(vector<int>& dist, int speed){
