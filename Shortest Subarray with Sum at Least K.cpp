@@ -1,3 +1,7 @@
+// Approach - Sliding Window + Monotonic Dequeue
+// T.C. -> O(N) + O(N) -> for monoptonic stack/queue
+// S.C. -> O(N) 
+
 class Solution {
 public:
     int shortestSubarray(vector<int>& nums, int k) {
