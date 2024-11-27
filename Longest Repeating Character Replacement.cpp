@@ -1,3 +1,6 @@
+// Approach - BRUTE FORCE 
+// T.C. -> O(N^2)
+// S.C. -> O(26)
 class Solution {
 public:
     int characterReplacement(string s, int k) {      
@@ -20,5 +23,39 @@ public:
           }
        }
        return maxLen;
+    }
+};
+
+
+// Approach - OPTIMAL
+class Solution {
+public:
+    int characterReplacement(string s, int k) {      
+       int maxLen = 0, maxF = 0;
+       int n = s.length();
+       int l=0, r=0;
+       int hash[26] = {0};
+       // Optimal Way-1
+       while(r < n){ // O(N)
+          hash[s[r]-'A']++;
+          maxF = max(maxF, hash[s[r]-'A']);
+        // Little bit Optimization
+          if((r-l+1) - maxF > k){ // linear
+            hash[s[l]-'A']--;
+            l++;
+          }
+        //   while((r-l+1) - maxF > k){ // Throughout all together - O(N)
+        //     hash[s[l]-'A']--;
+        //     for(int i=0; i<25; i++){  // everytime O(26)
+        //         maxF = max(maxF, hash[i]);
+        //     }
+        //     l++;
+        //   }
+          if((r-l+1) - maxF <= k){
+            maxLen = max(maxLen, r-l+1);
+          }
+          r++;
+       }
+       return maxLen;  // T.C. -> O(2N)*26  
     }
 };
