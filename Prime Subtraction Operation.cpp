@@ -1,3 +1,5 @@
+// T.C. -> O(n * maxNum)
+// S.C. -> O(1000)
 class Solution {
 public:
 bool isPrime[1000];
