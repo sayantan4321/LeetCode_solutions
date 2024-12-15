@@ -1,3 +1,10 @@
+// Brute Force
+// Check all combinations possible after applying each possible swap, and check with target and swap back and proceed to next set of recursions.
+// here we will get same strings in diff calls so we can Memorize it in a <string, bool> Map.
+
+// Optimal - Two Pointer
+// T.C. - O(N)
+// T.C. - O(1)
 class Solution {
 public:
     bool canChange(string start, string target) {
