@@ -1,3 +1,5 @@
+// Approach - Recursion
+
 class Solution {
 public:
     int solve(vector<int>& nums, int target, int i, int currSum){
