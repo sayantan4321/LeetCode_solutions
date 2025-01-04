@@ -1,11 +1,13 @@
-
-
+// Brute/Better Approach 1
+// T.C. -> O(3N)
+// S.C. -> O(2N)
 class Solution {
 public:
     int maxScore(string s) {
         int n = s.length();
         vector<int> curr0sum(n);
         vector<int> curr1sum(n);
+        
         int cnt0 = 0, cnt1 = 0;
         for(int i=0; i<s.length(); i++){
             if(s[i] == '0') {
@@ -25,5 +27,29 @@ public:
            maxSum = max(maxSum, sum);
         }
         return maxSum; 
+    }
+};
+
+// Better Approach 2
+// T.C. -> O(2N)
+// S.C. -> O(1)
+class Solution {
+public:
+    int maxScore(string s) {
+
+        int n = s.length();
+        int res = INT_MIN;
+
+        int totalOnes = count(s.begin(), s.end(), '1');
+        int zeros = 0, ones = 0;
+        for(int i=0; i<n-1; i++){
+            if(s[i] == '0'){
+                zeros++;
+            }
+            else ones++;
+            int right_ones = totalOnes - ones;
+            res = max(res, right_ones+zeros);
+        }
+        return res;
     }
 };
