@@ -3,20 +3,27 @@
 class Solution {
 public:
     int maxScore(string s) {
-       int Total_Zeros=0;
-        for(char c:s){
-            if(c=='0')Total_Zeros++;
-        }
-        int ans=-1;
-        int zeros=0;
-        int L=s.length();
-        for(int i=1;i<L;i++){
-            if(s.at(i-1)=='0'){
-                zeros++;
-                Total_Zeros--;
+        int n = s.length();
+        vector<int> curr0sum(n);
+        vector<int> curr1sum(n);
+        int cnt0 = 0, cnt1 = 0;
+        for(int i=0; i<s.length(); i++){
+            if(s[i] == '0') {
+                cnt0++;
             }
-            ans=max(ans,(zeros+(L-Total_Zeros-(i))));
+            curr0sum[i] = cnt0;
         }
-        return ans;  
+        for(int i=n-1; i>=0; i--){
+            if(s[i] == '1') {
+                cnt1++;
+            }
+            curr1sum[i] = cnt1;
+        }
+        int maxSum = 0;
+        for(int i=1; i<=n-2; i++){
+           int sum = curr0sum[i-1] +curr1sum[i];
+           maxSum = max(maxSum, sum);
+        }
+        return maxSum; 
     }
 };
