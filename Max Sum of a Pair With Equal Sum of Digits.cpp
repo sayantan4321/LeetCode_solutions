@@ -1,3 +1,6 @@
+// Approach - 1
+// T.C. -.O(N^2)
+//S.C. -> O(1)
 class Solution {
 public:
     int sumofDigits(int num){
